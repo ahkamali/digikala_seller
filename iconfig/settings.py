@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-z5*nsv3)f3dur^od%%0p)89l_*l76x4l(9sohp#rma&bm1wq0o
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.5']
+ALLOWED_HOSTS = ['192.168.1.5', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,24 +49,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iconfig.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'ENFORCE_SCHEMA': True,
-#         'NAME': 'mobisha',
-#         'CLIENT': {
-#             'host': 'localhost:27017',
-#         }
-#     }
-# }
-
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'mobisha',
-    }
-}
+     'default': {
+         'ENGINE': 'djongo',
+         'ENFORCE_SCHEMA': True,
+         'NAME': 'mobisha',
+         'CLIENT': {
+             'host': 'mongodb',
+         }
+     }
+ }
+
+
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'djongo',
+  #      'NAME': 'mobisha',
+   # }
+#}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

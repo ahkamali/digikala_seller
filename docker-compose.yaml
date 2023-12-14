@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  # Django application
+  web:
+    image: new_seller2
+    #container: django
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+
+  # MongoDB
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+
